@@ -1,0 +1,16 @@
+body{
+    text-align:center;
+      background-image: url(/images/1.jpg);
+    background-size: cover; 
+}
+.mission{
+    background-color:grey;
+    padding:5px;
+    border:1px black solid;
+}
+/* .form-group{
+  
+} */
+#usr{
+height:80px;
+}
