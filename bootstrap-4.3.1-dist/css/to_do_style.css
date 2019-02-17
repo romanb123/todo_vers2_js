@@ -8,9 +8,12 @@ body{
     padding:5px;
     border:1px black solid;
 }
-/* .form-group{
-  
-} */
+.forma{
+    background-image: url(/images/2.jpg); 
+    background-size: cover;  
+    color:white;
+    padding:5px;
+}
 #usr{
 height:80px;
 }
