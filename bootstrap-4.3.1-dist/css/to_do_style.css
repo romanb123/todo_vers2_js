@@ -5,9 +5,26 @@ body{
 }
 .mission{
     background-color:grey;
-    padding:5px;
-    border:1px black solid;
+    color:white;
+    padding:3px; 
+    height:400px;
+    border: 10px solid transparent;
+    border-image: url(/images/1.jpg) 30 round;
+    overflow: auto;
+    background-image: url(/images/pecil.jpg); 
+    background-size:cover;
+   
 }
+.date_time{
+    float:left;
+    position: absolute;
+    bottom: 1px;
+    left: 1px;
+    background-color: white;
+    color: black;
+}
+
+
 .forma{
     background-image: url(/images/2.jpg); 
     background-size: cover;  
@@ -16,4 +33,12 @@ body{
 }
 #usr{
 height:80px;
+}
+.remove{
+    color:white;
+    font-size:45px;  
+}
+.close{
+opacity:0.8; 
+line-height:0.5;
 }
