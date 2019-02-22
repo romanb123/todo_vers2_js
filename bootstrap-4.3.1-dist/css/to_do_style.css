@@ -31,8 +31,8 @@ body{
     color:white;
     padding:5px;
 }
-#usr{
-height:80px;
+#mission_text{
+height:100px;
 }
 .remove{
     color:white;
@@ -42,3 +42,4 @@ height:80px;
 opacity:0.8; 
 line-height:0.5;
 }
+
