@@ -12,8 +12,11 @@ body{
     border-image: url(/images/1.jpg) 30 round;
     overflow: auto;
     background-image: url(/images/pecil.jpg); 
-    background-size:cover;
-   
+    background-size:cover; 
+    /* animation: fadein 7s;
+    animation-iteration-count: 1; */
+    
+
 }
 .date_time{
     float:left;
@@ -42,4 +45,12 @@ height:100px;
 opacity:0.8; 
 line-height:0.5;
 }
+@keyframes fadein{
+from{
+opacity:0;
+}
 
+to{
+    opacity:1;
+}
+}
