@@ -11,19 +11,26 @@ function divcreate() {
   var time = document.getElementById('mission_time').value;
 
 // to local storage:
-      var ObjMissions = {text:mission, when:date, clock:time};
-      myJSON = JSON.stringify(ObjMissions);
-    ArrMissions.push(myJSON);
-    document.getElementById("heading").innerHTML = ArrMissions;
-    localStorage.setItem("lastname",ArrMissions);
-
+    var ObjMissions = {text:mission, when:date, clock:time};
+    ArrMissions.push(ObjMissions);
+     myJSON = JSON.stringify(ArrMissions);
+    localStorage.setItem("lastname",myJSON);
+  
+    // create the div:
   var newdiv = "<div class='col-sm-12 col-md-12  col-lg-3 mission'>"
     + "<button class='close' class='close' aria-label='Close'onclick='removemission()'>" + "<span aria-hidden='true' class='remove' >&times;</span>"
     + "</button>" + "<h1>" + "Mission" + "</h1>" + "<p>" + mission + "</p>" + "<span class='date_time'>" + date + "<br>" + time + "</span>"
     + "</div>";
   document.getElementById("missionsrow").innerHTML += newdiv;
 }
-
+    // to load misions:
+    function loadStorage(){
+     var stored= localStorage.getItem("lastname");
+   console.log(stored);
+   obj = JSON.parse(stored);
+    document.getElementById("heading").innerHTML=obj[0].text;
+    console.log(obj);
+    }
 // function to deleate a div:
 function removemission() {
   var d = event.target;
