@@ -8,14 +8,23 @@ function divcreate() {
   var mission = document.getElementById('mission_text').value;
   var date = document.getElementById('mission_date').value;
   var time = document.getElementById('mission_time').value;
-  var time = document.getElementById('mission_time').value;
+  
 
 // to local storage:
     var ObjMissions = {text:mission, when:date, clock:time};
+    var mission1=localStorage.getItem("lastname"); 
+    objmissions1 = JSON.parse(mission1);
+  if(objmissions1!=null){
+console.log(objmissions1);
+objmissions1.push(ObjMissions);
+ myJSON = JSON.stringify(objmissions1);
+localStorage.setItem("lastname",myJSON);
+}
+else{
     ArrMissions.push(ObjMissions);
      myJSON = JSON.stringify(ArrMissions);
     localStorage.setItem("lastname",myJSON);
-  
+}  
     // create the div:
   var newdiv = `<div class="col-sm-12 col-md-12  col-lg-3 mission" id="${i}">`
     + "<button class='close' class='close' aria-label='Close'onclick='removemission()'>" + "<span aria-hidden='true' class='remove' >&times;</span>"
@@ -26,9 +35,9 @@ function divcreate() {
 }
     // to load misions:
     function loadStorage(){
-     
       var mission1=localStorage.getItem("lastname"); 
       objmissions1 = JSON.parse(mission1);
+      console.log(objmissions1);
       for (let index = 0; index < objmissions1.length; index++) {
       var newdiv = `<div class="col-sm-12 col-md-12  col-lg-3 mission" id="${index}">`
       + "<button class='close' class='close' aria-label='Close'onclick='removemission()'>" + "<span aria-hidden='true' class='remove' >&times;</span>"
