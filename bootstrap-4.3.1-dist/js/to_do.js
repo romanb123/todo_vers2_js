@@ -1,6 +1,9 @@
 
-var i=0;
 
+
+
+
+var i=0;
 var ArrMissions = [];
 // function to creat a div:
 function divcreate() {
