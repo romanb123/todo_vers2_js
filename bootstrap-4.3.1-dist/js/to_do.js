@@ -29,7 +29,7 @@ function divcreate() {
     localStorage.setItem("lastname", myJSON);
   }
   // create the div:
-  var newdiv = `<div class="col-sm-12 col-md-12  col-lg-3 mission"id="${i}" onmouseover='showx(this)' onmouseout='undisplayx(this)>`
+  var newdiv = `<div class="col-sm-12 col-md-12  col-lg-3 mission"id="${i}" onmouseover='showx(this)' onmouseout='undisplayx(this)'>`
     + "<button class='close' class='close' aria-label='Close'onclick='removemission()'>" + "<span aria-hidden='true' class='remove' >&times;</span>"
     + "</button>" + "<h1>" + "Mission"+`${i}` + "</h1>" + "<p>" + mission + "</p>" + "<span class='date_time'>" + date + "<br>" + time + "</span>"
     + "</div>";
