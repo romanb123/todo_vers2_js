@@ -5,15 +5,34 @@
 
 var i = 0;
 var ArrMissions = [];
-// function to creat a div:
+//====================================
+// //function to clear all missions:
+// ====================================
+function clearall() {
+  document.getElementById("missionsrow").innerHTML = "";
+  i = 0;
+  localStorage.removeItem("lastname");
+
+}
+
+//===========================
+// // function to creat a div:
+// ===========================
+
 function divcreate() {
-  // get the value of the missions:
+
+  // =======================================
+  //   // get the values of the missions:
+  //   =====================================
+
   var mission = document.getElementById('mission_text').value;
   var date = document.getElementById('mission_date').value;
   var time = document.getElementById('mission_time').value;
 
+  // =======================================================================
+  //   // send to local storage+create/add array with the values of mission:
+  //   =====================================================================
 
-  // to local storage:
   var ObjMissions = { text: mission, when: date, clock: time };
   var mission1 = localStorage.getItem("lastname");
   objmissions1 = JSON.parse(mission1);
@@ -28,49 +47,67 @@ function divcreate() {
     myJSON = JSON.stringify(ArrMissions);
     localStorage.setItem("lastname", myJSON);
   }
-  //  remove fadein from oll classes so only the new get the fade in
+
+  // ==================================================================
+  // //  remove fadein from all classes so only the new get the fade in
+  // ==================================================================
 
   var divwithfade = document.querySelectorAll("div.mission");
-console.log(divwithfade.length);
-for (let d = 0; d < divwithfade.length; d++) {
-  divwithfade[d].classList.remove("fadeclass");  
-}
-
-// create the div: 
+  console.log(divwithfade.length);
+  for (let d = 0; d < divwithfade.length; d++) {
+    divwithfade[d].classList.remove("fadeclass");
+  }
+  // ==================
+  // // create new div: 
+  // ==================
   var newdiv = `<div class="col-sm-12 col-md-12  col-lg-3 mission fadeclass" id="${i}" onmouseover='showx(this)' onmouseout='undisplayx(this)'>`
     + "<button class='close' class='close' aria-label='Close'onclick='removemission()'>" + "<span aria-hidden='true' class='remove' >&times;</span>"
-    + "</button>" + "<h1>" + "Mission"+`${i}` + "</h1>" + "<p>" + mission + "</p>" + "<span class='date_time'>" + date + "<br>" + time + "</span>"
+    + "</button>" + "<h1>" + "Mission" + `${i}` + "</h1>" + "<p>" + mission + "</p>" + "<span class='date_time'>" + date + "<br>" + time + "</span>"
     + "</div>";
   document.getElementById("missionsrow").innerHTML += newdiv;
   i++;
 
+  //   //======================================
+  // to cleare the inputs after create new div
+  // // ======================================
+
+  mission = document.getElementById('mission_text').value = null;
+  date = document.getElementById('mission_date').value = null;
+  time = document.getElementById('mission_time').value = null;
+
 }
-// to load misions:
+//======================================
+// // to load misions from local storage:
+// ======================================
 function loadStorage() {
 
   var mission1 = localStorage.getItem("lastname");
   objmissions1 = JSON.parse(mission1);
- 
+
   var newdiv = "";
   console.log(objmissions1);
+  if(objmissions1!=null){
   for (let index = 0; index < objmissions1.length; index++) {
     if (objmissions1[index] == null) {
-      newdiv = `<div id="${index}"style=display:none;>`+`</div>`;
+      newdiv = `<div id="${index}"style=display:none;>` + `</div>`;
       document.getElementById("missionsrow").innerHTML += newdiv;
     }
     else {
       var newdiv = `<div class="col-sm-12 col-md-12  col-lg-3 mission" id="${index}" onmouseover='showx(this)' onmouseout='undisplayx(this)'>`
         + "<button class='close' class='close' aria-label='Close'onclick='removemission()'>" + "<span aria-hidden='true' class='remove' >&times;</span>"
-        + "</button>" + "<h1>" + "Mission"+`${index}`+ "</h1>" + "<p>" + objmissions1[index].text + "</p>" + "<span class='date_time'>" + objmissions1[index].date + "<br>" + objmissions1[index].time + "</span>"
+        + "</button>" + "<h1>" + "Mission" + `${index}` + "</h1>" + "<p>" + objmissions1[index].text + "</p>" + "<span class='date_time'>" + objmissions1[index].date + "<br>" + objmissions1[index].time + "</span>"
         + "</div>";
-      document.getElementById("missionsrow").innerHTML += newdiv; 
+      document.getElementById("missionsrow").innerHTML += newdiv;
       i = objmissions1.length;
     }
   }
 }
+}
 
-// ============================
-// function to deleate a div:
+// ==============================
+// // function to deleate a div:
+// ===============================
+
 function removemission() {
   var d = event.target;
   var p = d.parentElement;
@@ -90,9 +127,9 @@ function removemission() {
 // // to show the x when parent hover:
 // ==================================
 
-function showx(x){
-x.children[0].style.visibility="visible";
+function showx(x) {
+  x.children[0].style.visibility = "visible";
 };
-function undisplayx(x){
-  x.children[0].style.visibility="hidden";
+function undisplayx(x) {
+  x.children[0].style.visibility = "hidden";
 }
