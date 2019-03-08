@@ -28,13 +28,22 @@ function divcreate() {
     myJSON = JSON.stringify(ArrMissions);
     localStorage.setItem("lastname", myJSON);
   }
-  // create the div:
-  var newdiv = `<div class="col-sm-12 col-md-12  col-lg-3 mission"id="${i}" onmouseover='showx(this)' onmouseout='undisplayx(this)'>`
+  //  remove fadein from oll classes so only the new get the fade in
+
+  var divwithfade = document.querySelectorAll("div.mission");
+console.log(divwithfade.length);
+for (let d = 0; d < divwithfade.length; d++) {
+  divwithfade[d].classList.remove("fadeclass");  
+}
+
+// create the div: 
+  var newdiv = `<div class="col-sm-12 col-md-12  col-lg-3 mission fadeclass" id="${i}" onmouseover='showx(this)' onmouseout='undisplayx(this)'>`
     + "<button class='close' class='close' aria-label='Close'onclick='removemission()'>" + "<span aria-hidden='true' class='remove' >&times;</span>"
     + "</button>" + "<h1>" + "Mission"+`${i}` + "</h1>" + "<p>" + mission + "</p>" + "<span class='date_time'>" + date + "<br>" + time + "</span>"
     + "</div>";
   document.getElementById("missionsrow").innerHTML += newdiv;
   i++;
+
 }
 // to load misions:
 function loadStorage() {
@@ -60,13 +69,7 @@ function loadStorage() {
   }
 }
 
-// function fadein
-function clearFade(){
-var divwithfade = document.querySelectorAll("div.mission");
-console.log(divwithfade);
-console.log(divwithfade[0].classList);
-
-}
+// ============================
 // function to deleate a div:
 function removemission() {
   var d = event.target;
@@ -83,7 +86,10 @@ function removemission() {
   localStorage.setItem("lastname", myJSON);
 }
 
-// to show the x when parent hover:
+// ==================================
+// // to show the x when parent hover:
+// ==================================
+
 function showx(x){
 x.children[0].style.visibility="visible";
 };
