@@ -55,6 +55,14 @@ function removemission() {
   var p = d.parentElement;
   var s = p.parentElement;
   s.parentElement.removeChild(s);
+  console.log(s.id);
+  var idnum=s.id;
+  var mission1=localStorage.getItem("lastname"); 
+    objmissions1 = JSON.parse(mission1);
+   objmissions1.splice(s.id,1);
+    console.log(objmissions1); 
+    myJSON = JSON.stringify(objmissions1);
+    localStorage.setItem("lastname",myJSON);
 }
 
 // function to create an array
