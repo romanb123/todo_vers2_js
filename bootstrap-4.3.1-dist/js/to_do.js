@@ -29,7 +29,7 @@ function divcreate() {
     localStorage.setItem("lastname", myJSON);
   }
   // create the div:
-  var newdiv = `<div class="col-sm-12 col-md-12  col-lg-3 mission"id="${i}">`
+  var newdiv = `<div class="col-sm-12 col-md-12  col-lg-3 mission"id="${i}" onmouseover='showx(this)' onmouseout='undisplayx(this)>`
     + "<button class='close' class='close' aria-label='Close'onclick='removemission()'>" + "<span aria-hidden='true' class='remove' >&times;</span>"
     + "</button>" + "<h1>" + "Mission"+`${i}` + "</h1>" + "<p>" + mission + "</p>" + "<span class='date_time'>" + date + "<br>" + time + "</span>"
     + "</div>";
@@ -50,7 +50,7 @@ function loadStorage() {
       document.getElementById("missionsrow").innerHTML += newdiv;
     }
     else {
-      var newdiv = `<div class="col-sm-12 col-md-12  col-lg-3 mission" id="${index}">`
+      var newdiv = `<div class="col-sm-12 col-md-12  col-lg-3 mission" id="${index}" onmouseover='showx(this)' onmouseout='undisplayx(this)'>`
         + "<button class='close' class='close' aria-label='Close'onclick='removemission()'>" + "<span aria-hidden='true' class='remove' >&times;</span>"
         + "</button>" + "<h1>" + "Mission"+`${index}`+ "</h1>" + "<p>" + objmissions1[index].text + "</p>" + "<span class='date_time'>" + objmissions1[index].date + "<br>" + objmissions1[index].time + "</span>"
         + "</div>";
@@ -75,14 +75,10 @@ function removemission() {
   localStorage.setItem("lastname", myJSON);
 }
 
-// function to create an array
-// function newArray() {
-//   var mission = document.getElementById('mission_text').value;
-//   var date = document.getElementById('mission_date').value;
-//   var time = document.getElementById('mission_time').value;
-//     var ObjMissions = {text:mission, when:date, clock:time};
-//     myJSON = JSON.stringify(ObjMissions);
-//   ArrMissions.push(myJSON);
-//   document.getElementById("heading").innerHTML = ArrMissions;
-//   localStorage.setItem("lastname",ArrMissions);
-// }
+// to show the x when parent hover:
+function showx(x){
+x.children[0].style.visibility="hidden";
+};
+function undisplayx(x){
+  x.children[0].style.visibility="visible";
+}
