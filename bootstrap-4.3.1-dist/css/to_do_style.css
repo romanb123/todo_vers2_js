@@ -1,28 +1,29 @@
-body{
-    text-align:center;
-      background-image: url(/images/1.jpg);
-    background-size: cover; 
+body {
+    text-align: center;
+    background-image: url(/images/1.jpg);
+    background-size: cover;
 }
-.mission{
-    background-color:grey;
-    color:white;
-    padding:3px; 
-    height:400px;
+
+.mission {
+    background-color: grey;
+    color: white;
+    padding: 3px;
+    height: 400px;
     border: 10px solid transparent;
     border-image: url(/images/1.jpg) 30 round;
     overflow: auto;
-    background-image: url(/images/pecil.jpg); 
-    background-size:cover; 
+    background-image: url(/images/pecil.jpg);
+    background-size: cover;
+    word-break: break-all;
 }
 
-    .fadeclass{
+.fadeclass {
     animation: fadein 7s;
     animation-iteration-count: 1;
-    }
+}
 
-
-.date_time{
-    float:left;
+.date_time {
+    float: left;
     position: absolute;
     bottom: 1px;
     left: 1px;
@@ -30,31 +31,33 @@ body{
     color: black;
 }
 
-
-.forma{
-    background-image: url(/images/2.jpg); 
-    background-size: cover;  
-    color:white;
-    padding:5px;
-}
-#mission_text{
-height:100px;
-}
-.remove{
-    color:white;
-    font-size:45px;  
-}
-.close{
-opacity:0.8; 
-line-height:0.5;
-visibility:hidden;
-}
-@keyframes fadein{
-from{
-opacity:0;
+.forma {
+    background-image: url(/images/2.jpg);
+    background-size: cover;
+    color: white;
+    padding: 5px;
 }
 
-to{
-    opacity:1;
+#mission_text {
+    height: 100px;
 }
+
+.remove {
+    color: white;
+    font-size: 45px;
+}
+
+.close {
+    opacity: 0.8;
+    line-height: 0.5;
+    visibility: hidden;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
