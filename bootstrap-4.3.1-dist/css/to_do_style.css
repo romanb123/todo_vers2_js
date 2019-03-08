@@ -13,11 +13,14 @@ body{
     overflow: auto;
     background-image: url(/images/pecil.jpg); 
     background-size:cover; 
-    /* animation: fadein 7s;
-    animation-iteration-count: 1; */
-    
-
 }
+
+    .fadeclass{
+    animation: fadein 7s;
+    animation-iteration-count: 1;
+    }
+
+
 .date_time{
     float:left;
     position: absolute;
@@ -44,6 +47,7 @@ height:100px;
 .close{
 opacity:0.8; 
 line-height:0.5;
+visibility:hidden;
 }
 @keyframes fadein{
 from{

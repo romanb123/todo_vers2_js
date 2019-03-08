@@ -59,6 +59,14 @@ function loadStorage() {
     }
   }
 }
+
+// function fadein
+function clearFade(){
+var divwithfade = document.querySelectorAll("div.mission");
+console.log(divwithfade);
+console.log(divwithfade[0].classList);
+
+}
 // function to deleate a div:
 function removemission() {
   var d = event.target;
@@ -77,8 +85,8 @@ function removemission() {
 
 // to show the x when parent hover:
 function showx(x){
-x.children[0].style.visibility="hidden";
+x.children[0].style.visibility="visible";
 };
 function undisplayx(x){
-  x.children[0].style.visibility="visible";
+  x.children[0].style.visibility="hidden";
 }
