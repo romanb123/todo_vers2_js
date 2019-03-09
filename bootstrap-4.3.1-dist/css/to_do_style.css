@@ -3,10 +3,13 @@ body {
     background-image: url('../images/1.jpg');
     background-size: cover;
 }
+
 .jumbotron{
     background-image: url('../images/calendar.jpg');  
     background-size: cover; 
     background-position: left;
+    font-size: 50px;
+    color:blue;
 }
 
 .mission {
@@ -24,7 +27,7 @@ body {
 
 
 .fadeclass {
-    animation: fadein 7s;
+    animation: fadein 4s;
     animation-iteration-count: 1;
 }
 
@@ -33,6 +36,14 @@ body {
     position: absolute;
     bottom: 1px;
     left: 1px;
+    background-color: white;
+    color: black;
+}
+.missid{
+    float: right;
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
     background-color: white;
     color: black;
 }

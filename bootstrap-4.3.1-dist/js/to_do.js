@@ -65,8 +65,8 @@ else{
   // ==================
   var newdiv = `<div class="col-sm-12 col-md-12  col-lg-3 mission fadeclass" id="${i}" onmouseover='showx(this)' onmouseout='undisplayx(this)'>`
     + "<button class='close' class='close' aria-label='Close'onclick='removemission()'>" + "<span aria-hidden='true' class='remove' >&times;</span>"
-    + "</button>" + "<h1>" + "Mission" + `${i}` + "</h1>" + "<p>" + mission + "</p>" + "<span class='date_time'>" + date + "<br>" + time + "</span>"
-    + "</div>";
+    + "</button>" + "<h1>" + "Mission" + "</h1>" + "<p>" + mission + "</p>" + "<span class='date_time'>" + date + "<br>" + time + "</span>"
+    +"<span class='missid'>" + `${i}` + "</span>"+"</div>";
   document.getElementById("missionsrow").innerHTML += newdiv;
   i++;
 
@@ -98,8 +98,8 @@ function loadStorage() {
     else {
       var newdiv = `<div class="col-sm-12 col-md-12  col-lg-3 mission" id="${index}" onmouseover='showx(this)' onmouseout='undisplayx(this)'>`
         + "<button class='close' class='close' aria-label='Close'onclick='removemission()'>" + "<span aria-hidden='true' class='remove' >&times;</span>"
-        + "</button>" + "<h1>" + "Mission" + `${index}` + "</h1>" + "<p>" + objmissions1[index].text + "</p>" + "<span class='date_time'>" + objmissions1[index].date + "<br>" + objmissions1[index].time + "</span>"
-        + "</div>";
+        + "</button>" + "<h1>" + "Mission" + "</h1>" + "<p>" + objmissions1[index].text + "</p>" + "<span class='date_time'>" + objmissions1[index].when + "<br>" + objmissions1[index].clock + "</span>"
+        +"<span class='missid'>" + `${index}` + "</span>" + "</div>";
       document.getElementById("missionsrow").innerHTML += newdiv;
       i = objmissions1.length;
     }
