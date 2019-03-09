@@ -32,7 +32,10 @@ function divcreate() {
   // =======================================================================
   //   // send to local storage+create/add array with the values of mission:
   //   =====================================================================
-
+if(mission==""||date==""||time==""){
+alert("one of your values is empty!!!!!!");
+}
+else{
   var ObjMissions = { text: mission, when: date, clock: time };
   var mission1 = localStorage.getItem("lastname");
   objmissions1 = JSON.parse(mission1);
@@ -74,7 +77,7 @@ function divcreate() {
   mission = document.getElementById('mission_text').value = null;
   date = document.getElementById('mission_date').value = null;
   time = document.getElementById('mission_time').value = null;
-
+}
 }
 //======================================
 // // to load misions from local storage:
